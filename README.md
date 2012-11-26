@@ -23,3 +23,10 @@ For 192.168.51.6,
 http://192.168.51.6/tcpdumpster.php
 </code>
 
+## TODO
+
+1. Remove the line
+
+"sudo ln --symbolic --force /usr/share/zoneinfo/America/Los_Angeles /etc/localtime"
+
+in the installer and make it optional.
