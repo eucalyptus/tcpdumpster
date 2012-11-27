@@ -20,22 +20,20 @@ def main():
 	print
 
 	parser = OptionParser()
-	parser.add_option("-p", "--port", dest="port", help="port to monitor")
-#	parser.add_option("-e", "--email", dest="email", help="admin email")
+	parser.add_option("-p", "--port", dest="port", help="TCP Port to Monitor")
+	parser.add_option("-r", "--region", dest="region", help="TimeZone Region: [ \"west\", \"east\" ]")
 	(options, args) = parser.parse_args()
 
 	if options.port is None:
-		print "Need Input 'port'; Use --help Option"
+		print "Need Input '--port [port]'"
+		print "Use --help to Display Options"
 		exit()
-
-#	if options.email is None:
-#		print "Need Input 'email'; Use --help Option"
-#		exit()
 
 	print "=== ENVIRONMENT ==="
 	print
 	print "PORT: " + options.port
-#	print "EMAL: " + options.email
+	if options.region is not None:
+		print "REGION: " + options.region
 	print
 	print
 
@@ -72,8 +70,12 @@ def main():
 	cmd = "sudo yum -y install php-zts"
 	run_cmd(cmd)
 
-	cmd = "sudo ln --symbolic --force /usr/share/zoneinfo/America/Los_Angeles /etc/localtime"
-	run_cmd(cmd)
+	if options.region == "west":
+		cmd = "sudo ln --symbolic --force /usr/share/zoneinfo/America/Los_Angeles /etc/localtime"
+		run_cmd(cmd)
+	elif options.region == "east":	
+		cmd = "sudo ln --symbolic --force /usr/share/zoneinfo/America/New_York /etc/localtime"
+		run_cmd(cmd)
 
 	cmd = "sudo service ntpd restart"
 	run_cmd(cmd)
