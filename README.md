@@ -15,6 +15,14 @@ To monitor the TCP packet transmission on the port 8888:
  ./installer-tcpdumpster-webservice.py -p 8888
 </code>
 
+### Optional.
+
+To Set the TimeZone information at the install time:
+
+<code>
+ ./installer-tcpdumpster-webservice.py -p 8888 -r west
+</code>
+
 ## Monitor
 
 For 192.168.51.6,
@@ -25,8 +33,12 @@ http://192.168.51.6/tcpdumpster.php
 
 ## TODO
 
+<del>
 1. Remove the line
 
 "sudo ln --symbolic --force /usr/share/zoneinfo/America/Los_Angeles /etc/localtime"
 
 in the installer and make it optional.
+</del>
+
+DONE - 11/26/12
