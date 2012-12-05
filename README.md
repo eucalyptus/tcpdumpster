@@ -9,6 +9,12 @@ TCP Packet Monitoring with HTML Web Rendering Support via Gnuplot
 
 On Cento 6 image,
 
+Clone tcpdumpster on your local machine:
+
+<code>
+git clone git://github.com/eucalyptus/tcpdumpster.git
+</code>
+
 To monitor the TCP packet transmission on the port 8888:
 
 <code>
