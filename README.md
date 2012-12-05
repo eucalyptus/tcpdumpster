@@ -31,7 +31,7 @@ To Set the TimeZone information at the install time:
 
 ## Monitor
 
-URL of tcpdumpster Rendering HTML page:
+The URL of the HTML page:
 
 <code>
 http://ip_of_the_machine/tcpdumpster.php
@@ -41,6 +41,12 @@ For example, when monitoring the machine 192.168.51.6:
 
 <code>
 http://192.168.51.6/tcpdumpster.php
+</code>
+
+If you cannot see the HTML page, check out your firewall setting and disable it:
+
+<code>
+system-config-firewall-tui 
 </code>
 
 ## TODO
